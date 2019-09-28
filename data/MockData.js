@@ -1,13 +1,13 @@
 class MockData{
+
     constructor(){
-        this.getData();
+        this.dataArray();
     }
-    getData(){
-        let array = [{ key: 'val1', value: 1 },
-            { key: 'val2', value: 2 },
-            { key: 'val3', value: 3 },
-            { key: 'val4', value: 4 },
-            { key: 'val5', value: 5 }];
+
+    dataArray(){
+        let array = [{key:"val0", value: {"val1": "" ,"val2": "" }},
+            {key:"val1", value:{"val3": "","val4": "" }},
+            {key:"val2", value:{"val5": "" }}];
         return array;
     }
 }
