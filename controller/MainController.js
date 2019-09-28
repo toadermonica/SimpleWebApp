@@ -1,10 +1,30 @@
 import MockData from "../data/MockData";
+import Validation from "../helpers/Validators";
 
 class Controller{
 
-    // the calls to controller contain values: 1. some funky string i need to think of, for now it will be "other" - this returns val2 and val3
-    // val1 which is key - this returns val3 and val4
-    // val2 which is key again - this returns val5
+    //TODO: revise some of the functions in here
+    //todo: handle errors.
+    isAuthenticated(parameter){
+        let isInvalid = Validation.isInvalid(parameter);
+        if(!isInvalid){
+            return this.getPersonEndpoint();
+        }
+        return 'Unauthorized user!';
+    }
+
+    getPersonEndpoint(){
+        let data = MainController.getValue("val0");
+        return data;
+    }
+    getFacilityEndpoint(parameter){
+        let data = MainController.getValue(parameter);
+        return data;
+    }
+    getExposureEndpoint(parameter){
+        let data = MainController.getValue(parameter);
+        return data;
+    }
 
     getValue(reqValueKey){
         //implement function that validates the response and then take it from there.
@@ -13,52 +33,22 @@ class Controller{
         return result;
     }
 
+    findValue(reqValueKey, dataArray){
+        for(let valDataArray of dataArray){
+            if(reqValueKey == valDataArray.key){
+                return valDataArray.value;
+            }
+        }
+        return null;
+    }
     getMockDataValues(){
         let data = new MockData;
-        let dataArray = data.getData();
+        let dataArray = data.dataArray();
         return dataArray;
     }
 
-    findValue(key, array){
-        for(let val of array){
-            console.log('bool: ', key , ' ', val.key );
-            if(key === val.key ){
-                console.log('I am defined');
-                let resultValue = val.value;
-                return resultValue;
-            }
-        }
-        return 'Nopsy';
-    }
-
-    validateRequest(){
-        //TODO: validate the request set... either by regEx or something else, who knows :) then add in get value;
-    }
 }
 
 const MainController = new Controller;
 export default MainController;
 
-/*
-let result = '';
-switch(inputValue){
-    case 1:
-        result = 1;
-        break;
-    case 2:
-        result = 2;
-        break;
-    case 3:
-        result = 3;
-        break;
-    case 4:
-        result = 4;
-        break;
-    case 5:
-        result = 5;
-        break;
-    default:
-        result ='Unknown value';
-        break;
-}
-return result;*/
