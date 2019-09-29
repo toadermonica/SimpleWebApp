@@ -1,0 +1,51 @@
+body{
+    background-color: bisque;
+}
+div{
+    display: block;
+    text-align: center;
+    margin-top: 10%;
+}
+form{
+    display: inline-grid;
+}
+tr{
+    display: grid;
+    margin: 0 15px;
+    font-size: xx-large;
+    font-weight: 500;
+}
+td{
+    text-align: center;
+    padding: 10px;
+}
+input{
+    width: 500px;
+    color: black;
+    font-size: large;
+}
+#submit-button{
+    height: 30px;
+    width: 504px;
+    color: white;
+    font-size: large;
+    background-color: black;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+}
+.userval-response{
+    margin-top: 0px;
+    font-size: 21px;
+    color: darkgreen;
+    font-weight: bold;
+    padding-top: 15px;
+}
+.userval-error-msg{
+    margin-top: 0px;
+    font-size: large;
+    color: red;
+    font-weight: bold;
+    min-width: 500px;
+}

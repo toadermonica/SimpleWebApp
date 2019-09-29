@@ -5,7 +5,7 @@ class MockData{
     }
 
     dataArray(){
-        let array = [{key:"val0", value: {"val1": "" ,"val2": "" }},
+        const array = [{key:"val0", value: {"val1": "" ,"val2": "" }},
             {key:"val1", value:{"val3": "","val4": "" }},
             {key:"val2", value:{"val5": "" }}];
         return array;
