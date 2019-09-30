@@ -1,0 +1,27 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Web Application</title>
+    <link rel="stylesheet" href="/assets/_index.css">
+</head>
+<body>
+<div>
+    <form action="/userValues" method="post">
+        <table>
+            <tr>
+                <td>Simple Web Application User Values</td>
+                <td><input id="input-field" type="text" name="userval" ></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input id="submit-button" type="submit" value="Submit Info">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class="userval-response"><%= values %></div>
+    <div class="userval-error-msg"><%= error %></div>
+</div>
+<script src="/assets/client.js">
+</script>
+</body>
+

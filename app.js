@@ -26,12 +26,12 @@ appFrontend.get('/', function(req, res){
    });
 });
 appFrontend.post('/userValues', function(req, res){
-   let userValue = req.body.userval;
+   const userValue = req.body.userval;
    if(Validators.isEmpty(userValue)){
       return res.render('values',{values: "", error: 'Field is empty, please provide information'})
    }
    if(!Validators.isValid(userValue)){
-      return res.render('values', {values: "", error: 'Please use a valid input'} );
+      return res.render('values', {values: "", error: 'Please use a valid input'});
    }
    serviceAPI.getCallResult().then(result =>{
       return res.render('values',{values: result, error:''});

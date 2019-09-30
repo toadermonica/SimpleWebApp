@@ -35,6 +35,10 @@ input{
     border-bottom-width: 0px;
     border-right-width: 0px;
 }
+#submit-button:disabled{
+    color: black;
+    background-color: lightgray;
+}
 .userval-response{
     margin-top: 0px;
     font-size: 21px;
